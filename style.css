@@ -3,28 +3,36 @@ html {
     font-size: 1.5rem;
 }
 
-header {
+body {
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    font-weight: bold;
+    flex-direction: column;
 }
 
-header ul {
-    list-style: none;
-}
-
-header a {
+a {
     text-decoration: none;
     color: #fffffe;
 }
 
-header a:hover {
+a:hover {
     color: #D54A36;
     transition: all 150ms;
 }
 
-header ul li, footer ul li {
-    display: inline-block;
-    padding-left: 0.1rem;
-    padding-right: 0.1rem;
+header {
+    font-weight: bold;
+}
+
+header li {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+#glower {
+    height: 200px;
+}
+
+footer a {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
