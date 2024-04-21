@@ -1,38 +1,102 @@
-html {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
-}
-
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    color: #fff;
+}
+
+body::before {
+    content: "";
+    background-image: url("./img/paper_texture.png");
+    background-attachment: fixed;
+    z-index: -1;
+    background-size: cover;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.25;
 }
 
 a {
-    text-decoration: none;
-    color: #fffffe;
+    color: #5EAD8E;
 }
 
-a:hover {
-    color: #D54A36;
-    transition: all 150ms;
+.orange {
+    background-color: #c1513b;
+    color: #fff;
 }
 
-header {
-    font-weight: bold;
+.font-medium {
+    font-size: 3rem;
+    line-height: 2.5rem;
 }
 
-header li {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+.font-large {
+    font-size: 10rem;
+    line-height: 8rem;
 }
 
-#glower {
+#contact-foto {
+    height: 400px;
+    object-fit: cover;
+    object-position: 50% 15%;
+    width: 100%;
+}
+
+#glower-logo {
+    height: 300px
+}
+
+#glower-logo-float {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
     height: 200px;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
 
-footer a {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+.icon-link {
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+/* eye flag */
+.eye-flag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.eye-flag img {
+    width: 100px;
+    padding-right: 1rem;
+}
+
+.eye-flag span {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+/* live date */
+.live-date {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.live-date img {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #fff;
+}
+
+.live-date div {
+    padding-top: 1rem;
 }
