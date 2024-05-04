@@ -15,6 +15,87 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
         rel="stylesheet">
+    <script>
+        fetch("https://jsonplaceholder.typicode.com/posts/1")
+            .then((response) => response.json())
+            .then((json) => {
+                const events = [
+                    {
+                        venue: {
+                            name: 'Cafe Brazil',
+                            city: 'Lübeck'
+                        },
+                        datetime: "2024-04-13T20:00:00",
+                        lineup: [
+                            "Illusions of success",
+                            "Predission"
+                        ]
+                    },
+                    {
+                        venue: {
+                            name: 'Stumpf',
+                            city: 'Hannover'
+                        },
+                        datetime: "2024-04-27T21:00:00",
+                        lineup: [
+                            "We too, will fade",
+                            "Lion´s Waltz"
+                        ]
+                    },
+                    {
+                        venue: {
+                            name: 'Fla Fla',
+                            city: 'Herford'
+                        },
+                        datetime: "2024-05-11T19:00:00",
+                        lineup: [
+                            "oakhands",
+                            "lion´s waltz",
+                            "mørker"
+                        ]
+                    },
+                    {
+                        venue: {
+                            name: 'TBA',
+                            city: 'TBA'
+                        },
+                        datetime: "2024-06-14T19:00:00",
+                        lineup: [
+                        ]
+                    },
+                ]
+                const eventContainer = document.getElementById('events-container')
+                for (const event of events) {
+                    const date = new Date(event.datetime)
+                    const eventElem = document.createElement('div')
+                    eventElem.classList.add('row', 'my-3')
+                    // date
+                    const dateElem = document.createElement('div')
+                    dateElem.classList.add('col-2')
+                    dateElem.innerHTML = date.toLocaleDateString('en', { month: 'short', day: '2-digit', weekday: 'short' })
+                    eventElem.appendChild(dateElem)
+                    // location
+                    const locationElem = document.createElement('div')
+                    locationElem.classList.add('col-3')
+                    locationElem.innerHTML = event.venue.name + ' @ ' + date.toLocaleString('en', { hour: 'numeric', minute: 'numeric' })
+                    eventElem.appendChild(locationElem)
+                    // lineup
+                    const lineupElem = document.createElement('div')
+                    lineupElem.classList.add('col-5')
+                    if (event.lineup.length) {
+                        lineupElem.innerHTML = 'w/ ' + event.lineup.join(' & ').toLowerCase()
+                    }
+                    eventElem.appendChild(lineupElem)
+                    // city
+                    const cityElem = document.createElement('div')
+                    cityElem.classList.add('col-2')
+                    cityElem.innerHTML = event.venue.city
+                    eventElem.appendChild(cityElem)
+
+                    eventContainer.appendChild(eventElem)
+                }
+            });
+    </script>
 </head>
 
 <body class="bg-dark">
@@ -22,16 +103,16 @@
 
         <!-- Version A -->
         <div class="row my-5">
-                <div class="col d-flex justify-content-center">
-                    <img id="glower-logo" src="./img/glower_logo_outlined_white_gradient.png" class="img-fluid">
-                </div>
+            <div class="col d-flex justify-content-center">
+                <img id="glower-logo" src="./img/glower_logo_outlined_white_gradient.png" class="img-fluid">
             </div>
+        </div>
 
-            <div class="row align-items-center">
-                <div class="col">
-                    <img src="./img/glower_band_1.jpg" class="img-fluid">
-                </div>
-            </div>  
+        <div class="row align-items-center">
+            <div class="col">
+                <img src="./img/glower_band_1.jpg" class="img-fluid">
+            </div>
+        </div>
         <!-- Version A END -->
 
         <!-- Version B -->
@@ -73,42 +154,7 @@
             </div>
         </div>
 
-        <div class="row p-5">
-            <!-- A -->
-            <div class="row my-3">
-                <div class="col-2">APR 13 SAT</div>
-                <div class="col-3">Cafe Brazil @ 8:00PM</div>
-                <div class="col-5">w/ illusions of success & predission</div>
-                <div class="col-2">Lübeck</div>
-            </div>
-            <div class="row my-3">
-                <div class="col-2">APR 27 SAT</div>
-                <div class="col-3">Stumpf @ 9:00PM</div>
-                <div class="col-5">w/ we too will fade & lion´s waltz</div>
-                <div class="col-2">Hannover</div>
-            </div>
-            <div class="row my-3">
-                <div class="col-2">MAY 11 SAT</div>
-                <div class="col-3">FlaFla @ 7:00pm</div>
-                <div class="col-5">w/ oakhands, lion´s waltz & mørker</div>
-                <div class="col-2">Herford</div>
-            </div>
-
-            <!-- B -->
-            <!-- <div class="d-flex">
-                <div class="col-3 live-date">
-                    <img src="./img/live_1.png" class="img-fluid">
-                    <div class="fw-bold">13.04. Lübeck, Cafe Brazil</div>
-                    <div>with illusions of success & predission</div>
-                    <div>doors 8pm | start 9pm</div>
-                </div>
-                <div class="col-3 live-date">
-                    <img src="./img/live_1.png" class="img-fluid">
-                    <div class="fw-bold">27.04. Hannover, Stumpf</div>
-                    <div>with we too will fade & lion´s waltz</div>
-                    <div>doors 7pm | start 8pm</div>
-                </div>
-            </div> -->
+        <div class="row p-5" id="events-container">
         </div>
 
         <!-- CONTACT -->
