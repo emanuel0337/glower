@@ -15,96 +15,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
         rel="stylesheet">
-    <script>
-        fetch("https://jsonplaceholder.typicode.com/posts/1")
-            .then((response) => response.json())
-            .then((json) => {
-                const events = [
-                    {
-                        venue: {
-                            name: 'Cafe Brazil',
-                            city: 'Lübeck'
-                        },
-                        datetime: "2024-04-13T20:00:00",
-                        lineup: [
-                            "Illusions of success",
-                            "Predission"
-                        ]
-                    },
-                    {
-                        venue: {
-                            name: 'Stumpf',
-                            city: 'Hannover'
-                        },
-                        datetime: "2024-04-27T21:00:00",
-                        lineup: [
-                            "We too, will fade",
-                            "Lion´s Waltz"
-                        ]
-                    },
-                    {
-                        venue: {
-                            name: 'Fla Fla',
-                            city: 'Herford'
-                        },
-                        datetime: "2024-05-11T19:00:00",
-                        lineup: [
-                            "oakhands",
-                            "lion´s waltz",
-                            "mørker"
-                        ]
-                    },
-                    {
-                        venue: {
-                            name: 'Gängeviertel',
-                            city: 'Hamburg'
-                        },
-                        datetime: "2024-06-14T19:00:00",
-                        lineup: [
-                            'finalizer',
-                            'gone society',
-                            'neck lock'
-                        ]
-                    },
-                ]
-                const eventContainer = document.getElementById('events-container')
-                for (const event of events) {
-                    const date = new Date(event.datetime)
-                    const eventElem = document.createElement('div')
-                    eventElem.classList.add('row', 'my-3')
-                    // date
-                    const dateElem = document.createElement('div')
-                    dateElem.classList.add('col-2')
-                    dateElem.innerHTML = date.toLocaleDateString('en', { month: 'short', day: '2-digit', weekday: 'short' })
-                    eventElem.appendChild(dateElem)
-                    // location
-                    const locationElem = document.createElement('div')
-                    locationElem.classList.add('col-3')
-                    locationElem.innerHTML = event.venue.name + ' @ ' + date.toLocaleString('en', { hour: 'numeric', minute: 'numeric' })
-                    eventElem.appendChild(locationElem)
-                    // lineup
-                    const lineupElem = document.createElement('div')
-                    lineupElem.classList.add('col-5')
-                    if (event.lineup.length) {
-                        lineupElem.innerHTML = 'w/ ' + event.lineup.join(' & ').toLowerCase()
-                    }
-                    eventElem.appendChild(lineupElem)
-                    // city
-                    const cityElem = document.createElement('div')
-                    cityElem.classList.add('col-2')
-                    cityElem.innerHTML = event.venue.city
-                    eventElem.appendChild(cityElem)
 
-                    eventContainer.appendChild(eventElem)
-                }
-            });
-    </script>
+    <script charset="utf-8" src="https://widgetv3.bandsintown.com/main.min.js"></script>
 </head>
 
 <body class="bg-dark">
     <div class="container-xl px-0">
 
-        <!-- Version A -->
         <div class="row my-5">
             <div class="col d-flex justify-content-center">
                 <img id="glower-logo" src="./img/glower_logo_outlined_white_gradient.png" class="img-fluid">
@@ -116,15 +33,6 @@
                 <img src="./img/glower_band_1.jpg" class="img-fluid">
             </div>
         </div>
-        <!-- Version A END -->
-
-        <!-- Version B -->
-        <!-- <div class="w-100 d-flex">
-            <img src="./img/glower_band_1.jpg" class="img-fluid">
-            <img id="glower-logo-float" src="./img/glower_logo_outlined_black_gradient.png" class="img-fluid">
-        </div> -->
-        <!-- Version B END -->
-
 
         <div class="row">
             <div class="eye-flag">
@@ -157,8 +65,51 @@
             </div>
         </div>
 
-        <div class="row p-5" id="events-container">
-        </div>
+        <a class="bit-widget-initializer"
+            data-artist-name="id_15544950"
+            data-background-color="rgba(155,155,155,0)"
+            data-separator-color="#DDDDDD"
+            data-text-color="rgba(255,255,255,1)"
+            data-auto-style="true"
+            data-display-logo="false"
+            data-display-track-button="false"
+            data-display-play-my-city="false"
+            data-display-details="true"
+            data-display-start-time="true"
+            data-display-local-dates="false"
+            data-display-past-dates="true"
+            data-social-share-icon="false"
+            data-event-rsvp-position="hidden"
+            data-follow-section-position="hidden"
+            data-play-my-city-position="hidden"
+
+            data-display-limit="all"
+            
+            data-date-format="MMM. D, YYYY"
+            data-date-orientation="horizontal"
+            data-date-border-color="#4A4A4A"
+            data-date-border-width="1px"
+            data-date-border-radius="10px"
+            
+            data-event-ticket-text="TICKETS"
+            data-event-ticket-icon=""
+            data-event-ticket-cta-size="medium"
+            data-event-ticket-cta-text-color="#FFFFFF"
+            data-event-ticket-cta-bg-color="#4A4A4A"
+            data-event-ticket-cta-border-color="#4A4A4A"
+            data-event-ticket-cta-border-width="0px"
+            data-event-ticket-cta-border-radius="4px"
+            
+            data-sold-out-button-text-color="#FFFFFF"
+            data-sold-out-button-background-color="#4A4A4A"
+            data-sold-out-button-border-color="#4A4A4A"
+            data-sold-out-button-clickable="false"
+            
+            data-language="en"
+            data-layout-breakpoint="900"
+            data-bit-logo-position="bottomRight"
+            data-bit-logo-color="rgba(204,204,204,0)"
+        ></a>
 
         <!-- CONTACT -->
 

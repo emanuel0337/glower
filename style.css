@@ -87,16 +87,11 @@ a {
 }
 
 /* live date */
-.live-date {
-    margin-left: 1rem;
-    margin-right: 1rem;
+/* overwrite default widget styles */
+.bit-event-buttons {
+    display: none !important; 
 }
 
-.live-date img {
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #fff;
-}
-
-.live-date div {
-    padding-top: 1rem;
+.bit-location {
+    text-align: end !important;
 }
