@@ -10,25 +10,20 @@ body {
 
 body::before {
     content: "";
-    background-image: url("./img/paper_texture.png");
+    background-image: url("./img/paper_background.jpeg");
     background-attachment: fixed;
-    z-index: -1;
+    z-index: -10;
     background-size: cover;
     position: fixed;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.25;
+    opacity: 1;
 }
 
 a {
-    color: #5EAD8E;
-}
-
-.orange {
-    background-color: #c1513b;
-    color: #fff;
+    color: #ff7167;
 }
 
 .font-medium {
@@ -41,30 +36,34 @@ a {
     line-height: 8rem;
 }
 
-#contact-foto {
-    height: 400px;
-    object-fit: cover;
-    object-position: 50% 15%;
-    width: 100%;
-}
-
 #glower-logo {
-    height: 300px
+    height: 500px
 }
 
-#glower-logo-float {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    height: 200px;
-    top: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
+#glower-foto-dark {
+    filter: brightness(40%);
+    z-index: -1;
 }
 
 .icon-link {
     text-decoration: none;
+}
+
+#release-container {
+    height: 500px;
+}
+
+#release-image {
+    width: 500px;
+    z-index: -1;
+}
+
+#press-container {
+    height: 800px;
+}
+
+#press-text {
+    width: 60%;
 }
 
 /* eye flag */
@@ -88,7 +87,7 @@ a {
 /* live date */
 /* overwrite default widget styles */
 .bit-event-buttons {
-    display: none !important; 
+    display: none !important;
 }
 
 .bit-location {
